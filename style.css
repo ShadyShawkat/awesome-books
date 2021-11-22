@@ -1,0 +1,10 @@
+ul {
+  list-style: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+}
