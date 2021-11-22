@@ -1,4 +1,4 @@
-const myBooks = [];
+let myBooks = [];
 
 const form = document.querySelector('form');
 const booksList = document.querySelector('.books');
@@ -25,7 +25,7 @@ booksList.appendChild(bookItem);
 }
 
 function removeBook(id) {
-    myBooks.splice(id, 1);
-    console.log(myBooks)
+    myBooks = myBooks.splice(id, 1);
+    console.log(myBooks);
 }
 form.addEventListener('submit', addBook);
