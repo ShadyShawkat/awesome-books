@@ -79,7 +79,8 @@ class Book {
   static books = [];
 
   static getDataFromLocalStorage() {
-    return JSON.parse(window.localStorage.getItem('booksData'));
+    const data = JSON.parse(window.localStorage.getItem('booksData'));
+    data.myBooks.forEach((book) => {})
   }
 
   static setDataInLocalStorage(data) {
@@ -104,7 +105,6 @@ class Book {
     );
     Book.setDataInLocalStorage(books);
     renderUI(books.myBooks);
-
   }
 
 }
