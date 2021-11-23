@@ -43,7 +43,7 @@ if (!booksData) {
   renderUI(booksData.myBooks);
 }
 
-function addBook(e) {
+class addBook(e) {
   e.preventDefault();
   const title = document.querySelector('.title').value;
   const author = document.querySelector('.author').value;
