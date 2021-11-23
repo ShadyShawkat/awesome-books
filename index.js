@@ -1,23 +1,22 @@
-const form = document.querySelector("form");
-const booksList = document.querySelector(".books");
-const title = document.querySelector(".title");
-const author = document.querySelector(".author");
+const form = document.querySelector('form');
+const booksList = document.querySelector('.books');
+const title = document.querySelector('.title');
+const author = document.querySelector('.author');
 
 class Book {
-  constructor(title, author) {
+  constructor(title, author, id = 0) {
     this.title = title;
     this.author = author;
-    this.id;
+    this.id = id;
   }
 
   static books = [];
 
   static getDataFromLocalStorage() {
-    if (!window.localStorage.getItem("booksData")) return;
-    const data = JSON.parse(window.localStorage.getItem("booksData"));
+    if (!window.localStorage.getItem('booksData')) return null;
+    const data = JSON.parse(window.localStorage.getItem('booksData'));
     data.myBooks = data.myBooks.map((b) => {
-      const book = new Book(b.title, b.author);
-      book.id = b.id;
+      const book = new Book(b.title, b.author, b.id);
       return book;
     });
     Book.books = data.myBooks;
@@ -25,14 +24,14 @@ class Book {
   }
 
   static setDataInLocalStorage(data) {
-    window.localStorage.setItem("booksData", JSON.stringify(data));
+    window.localStorage.setItem('booksData', JSON.stringify(data));
   }
 
   static renderUI() {
     const books = Book.getDataFromLocalStorage();
-    booksList.innerHTML = "";
+    booksList.innerHTML = '';
     Book.books.forEach((book) => {
-      const bookItem = document.createElement("li");
+      const bookItem = document.createElement('li');
       bookItem.innerHTML = `
       <p>Title: ${book.title}</p>
       <p>Author: ${book.author}</p>
@@ -40,11 +39,11 @@ class Book {
       booksList.appendChild(bookItem);
     });
 
-    const removeBtns = document.querySelectorAll(".remove-btn");
+    const removeBtns = document.querySelectorAll('.remove-btn');
     removeBtns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+      btn.addEventListener('click', (e) => {
         const bookId = e.target.id;
-        books.myBooks = books.myBooks.filter((book) => book.id !== parseInt(bookId));
+        books.myBooks = books.myBooks.filter((book) => book.id !== parseInt(bookId, 10));
         Book.setDataInLocalStorage(books);
         Book.renderUI();
       });
@@ -58,8 +57,8 @@ class Book {
     books.bookCount += 1;
     Book.setDataInLocalStorage(books);
     Book.renderUI();
-    title.value = "";
-    author.value = "";
+    title.value = '';
+    author.value = '';
   }
 
   removeBook(id = this.id) {
@@ -70,7 +69,7 @@ class Book {
   }
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   const newBook = new Book(title.value, author.value);
   newBook.addBook();
