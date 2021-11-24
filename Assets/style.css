@@ -22,6 +22,11 @@ body {
   padding-right: 10px;
 }
 
+.books li {
+  display: flex;
+  align-items: center;
+}
+
 .nav-items li:last-child {
   border-right: 0;
   padding-right: 0;
@@ -51,11 +56,6 @@ body {
 
 p {
   margin-bottom: 0 !important;
-}
-
-.books li {
-  display: flex;
-  align-items: center;
 }
 
 .books li:nth-child(odd) {

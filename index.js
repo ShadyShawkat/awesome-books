@@ -1,8 +1,8 @@
-const DateTime = luxon.DateTime;
-const form = document.querySelector("form");
-const booksList = document.querySelector(".books");
-const title = document.querySelector(".title");
-const author = document.querySelector(".author");
+const { DateTime } = luxon;// eslint-disable-line
+const form = document.querySelector('form');
+const booksList = document.querySelector('.books');
+const title = document.querySelector('.title');
+const author = document.querySelector('.author');
 
 class Book {
   constructor(title, author, id = 0) {
@@ -14,8 +14,8 @@ class Book {
   static books = [];
 
   static getDataFromLocalStorage() {
-    if (!window.localStorage.getItem("booksData")) return null;
-    const data = JSON.parse(window.localStorage.getItem("booksData"));
+    if (!window.localStorage.getItem('booksData')) return null;
+    const data = JSON.parse(window.localStorage.getItem('booksData'));
     data.myBooks = data.myBooks.map((b) => {
       const book = new Book(b.title, b.author, b.id);
       return book;
@@ -25,27 +25,27 @@ class Book {
   }
 
   static setDataInLocalStorage(data) {
-    window.localStorage.setItem("booksData", JSON.stringify(data));
+    window.localStorage.setItem('booksData', JSON.stringify(data));
   }
 
   static renderUI() {
     const books = Book.getDataFromLocalStorage();
-    booksList.innerHTML = "";
+    booksList.innerHTML = '';
     Book.books.forEach((book) => {
-      const bookItem = document.createElement("li");
-      bookItem.className = "px-3 py-1";
+      const bookItem = document.createElement('li');
+      bookItem.className = 'px-3 py-1';
       bookItem.innerHTML = `
       <p>"${book.title}" by ${book.author}</p>
       <button class="remove-btn ms-auto" id="${book.id}">Remove</button>`;
       booksList.appendChild(bookItem);
     });
 
-    const removeBtns = document.querySelectorAll(".remove-btn");
+    const removeBtns = document.querySelectorAll('.remove-btn');
     removeBtns.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+      btn.addEventListener('click', (e) => {
         const bookId = e.target.id;
         books.myBooks = books.myBooks.filter(
-          (book) => book.id !== parseInt(bookId, 10)
+          (book) => book.id !== parseInt(bookId, 10),
         );
         Book.setDataInLocalStorage(books);
         Book.renderUI();
@@ -60,8 +60,8 @@ class Book {
     books.bookCount += 1;
     Book.setDataInLocalStorage(books);
     Book.renderUI();
-    title.value = "";
-    author.value = "";
+    title.value = '';
+    author.value = '';
   }
 
   removeBook(id = this.id) {
@@ -72,7 +72,7 @@ class Book {
   }
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   const newBook = new Book(title.value, author.value);
   newBook.addBook();
@@ -91,21 +91,21 @@ if (!booksData) {
 }
 
 function getNumberSuffix(num) {
-  const th = "th";
-  const rd = "rd";
-  const nd = "nd";
-  const st = "st";
+  const th = 'th';
+  const rd = 'rd';
+  const nd = 'nd';
+  const st = 'st';
 
   if (num === 11 || num === 12 || num === 13) return th;
 
-  let lastDigit = num.toString().slice(-1);
+  const lastDigit = num.toString().slice(-1);
 
   switch (lastDigit) {
-    case "1":
+    case '1':
       return st;
-    case "2":
+    case '2':
       return nd;
-    case "3":
+    case '3':
       return rd;
     default:
       return th;
@@ -114,31 +114,35 @@ function getNumberSuffix(num) {
 
 window.onload = () => {
   const date = DateTime.now();
-  const dateString = `${date.monthLong} ${date.day}${getNumberSuffix(date.day)} ${date.year}, ${date.toFormat("tt")}`;
+  const dateString = `${date.monthLong} ${date.day}${getNumberSuffix(
+    date.day,
+  )} ${date.year}, ${date.toFormat('tt')}`;
   document.querySelector('.time').textContent = dateString;
-  
+
   setInterval(() => {
     const date = DateTime.now();
-    const dateString = `${date.monthLong} ${date.day}${getNumberSuffix(date.day)} ${date.year}, ${date.toFormat("tt")}`;
+    const dateString = `${date.monthLong} ${date.day}${getNumberSuffix(
+      date.day,
+    )} ${date.year}, ${date.toFormat('tt')}`;
     document.querySelector('.time').textContent = dateString;
   }, 1000);
 
-  const navLinks = document.querySelectorAll(".nav-items li a");
+  const navLinks = document.querySelectorAll('.nav-items li a');
   navLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      document.querySelector(".active").classList.remove("active");
-      event.target.classList.add("active");
+    link.addEventListener('click', (event) => {
+      document.querySelector('.active').classList.remove('active');
+      event.target.classList.add('active');
 
-      document.querySelectorAll("section").forEach((sec) => {
-        sec.classList.add("d-none");
+      document.querySelectorAll('section').forEach((sec) => {
+        sec.classList.add('d-none');
       });
 
-      if (event.target.id === "list") {
-        document.querySelector(".bookList").classList.remove("d-none");
-      } else if (event.target.id === "form") {
-        document.querySelector(".formInput").classList.remove("d-none");
+      if (event.target.id === 'list') {
+        document.querySelector('.bookList').classList.remove('d-none');
+      } else if (event.target.id === 'form') {
+        document.querySelector('.formInput').classList.remove('d-none');
       } else {
-        document.querySelector(".contactForm").classList.remove("d-none");
+        document.querySelector('.contactForm').classList.remove('d-none');
       }
     });
   });
