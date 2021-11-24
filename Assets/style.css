@@ -40,6 +40,18 @@ p {
   box-shadow: 3px 3px 2px #888;
 }
 
+.bookList {
+  display: block;
+}
+
+.formInput {
+  display: none;
+}
+
+.contactForm {
+  display: none;
+}
+
 form {
   margin: 0 auto;
   display: flex;
