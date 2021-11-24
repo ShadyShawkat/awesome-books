@@ -27,15 +27,13 @@ ul li {
 }
 
 ul li:nth-child(odd) {
-  background:rgb(212, 211, 211);
+  background: rgb(212, 211, 211);
 }
 
 .remove-btn {
-  height: fit-content;
-  box-shadow:3px 3px 2px #888888;
-
+  height: 36px;
+  box-shadow: 3px 3px 2px #888;
 }
-
 
 form {
   margin: 0 auto;
