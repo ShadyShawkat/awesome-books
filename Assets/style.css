@@ -1,3 +1,9 @@
+
+* {
+  font-family: "Comic Neue", "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
 body {
   text-align: center;
 }
@@ -6,6 +12,8 @@ ul {
   list-style: none;
   width: 400px;
   margin: 0 auto;
+  border: black 1px solid;
+  padding-left: 0 !important;
 }
 
 p {
@@ -17,7 +25,13 @@ ul li {
   border-bottom: 1px solid black;
   padding-bottom: 15px;
   margin-bottom: 30px;
+  display: flex;
 }
+
+ul li:nth-child(even) {
+  background:rgb(212, 211, 211);
+}
+
 
 form {
   margin: 50px auto 0 auto;
