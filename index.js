@@ -32,10 +32,9 @@ class Book {
     booksList.innerHTML = '';
     Book.books.forEach((book) => {
       const bookItem = document.createElement('li');
-      bookItem.className = 'dx3t'
+      bookItem.className = 'px-3 py-1'
       bookItem.innerHTML = `
-      <p>Title: ${book.title}</p>
-      <p>Author: ${book.author}</p>
+      <p>"${book.title}" by ${book.author}</p>
       <button class="remove-btn ms-auto" id="${book.id}">Remove</button>`;
       booksList.appendChild(bookItem);
     });

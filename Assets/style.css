@@ -17,19 +17,20 @@ ul {
 }
 
 p {
-  margin: 0;
-  margin-bottom: 3px;
+  margin-bottom: 0 !important;
 }
 
 ul li {
-  border-bottom: 1px solid black;
-  padding-bottom: 15px;
-  margin-bottom: 30px;
   display: flex;
+  align-items: center;
 }
 
-ul li:nth-child(even) {
+ul li:nth-child(odd) {
   background:rgb(212, 211, 211);
+}
+
+.remove-btn {
+  height: fit-content;
 }
 
 
