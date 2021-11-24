@@ -1,56 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Assets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./Assets/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
+  <body>
+    <div class="wrapper d-flex flex-column p-3">
+      <nav
+        class="d-flex justify-content-start border border-dark px-4 py-2"
+      >
+        <div class="fs-4">Awesome Books</div>
+        <ul class="nav-items d-flex ms-auto align-items-center mb-0">
+          <li><a class="nav-item active" id="list">List</a></li>
+          <li><a class="nav-item" id="form">Add New</a></li>
+          <li><a class="nav-item" id="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="time mb-5 align-self-end">
+      </div>
+      <section class="bookList">
+        <h1 class="main-title d-flex justify-content-center fw-bold">
+          Awesome books
+        </h1>
+        <div>
+          <ul class="books"></ul>
+        </div>
+      </section>
+      <section class="formInput d-none">
+        <h2 class="text-center fw-bold">Add a new book</h2>
+        <form>
+          <input placeholder="Title" class="title" required />
+          <input placeholder="Author" class="author" required />
 
-<body>
-  <nav class="d-flex justify-content-start border border-dark px-4 pt-3">
-    <div class="">Awesome Books</div>
-    <ul class="nav-items d-flex justify-content-end ms-auto">
-      <li> List </li>
-      <li> Add New </li>
-      <li> Contact </li>
-    </ul>
-  </nav>
-  <section class="bookList">
-    <h1 class='main-title d-flex justify-content-center'>Awesome books</h1>
-    <div>
-      <ul class="books">
-
-      </ul>
+          <button type="submit" class="add-btn">Add</button>
+        </form>
+      </section>
+      <section class="contactForm d-none">
+        <h2 class="d-flex justify-content-center fw-bold">
+          Contact information
+        </h2>
+        <p class="d-flex justify-content-center">Please contact us!</p>
+        <div class="d-flex">
+          <ul class="list-contact">
+            <li class="">Our email</li>
+            <li class="">Our Phone</li>
+            <li class="">Our Address</li>
+          </ul>
+        </div>
+      </section>
+      <footer class="border border-dark mt-auto p-3">Copyright...</footer>
     </div>
-  </section>
-  <section class="formInput">
-    <form>
-      <input placeholder="Title" class="title" required>
-      <input placeholder="Author" class="author" required>
     
-      <button type="submit" class="add-btn">Add</button>
-    </form>
-  </section>
-  <section class="contactForm">
-    <h2 class='d-flex justify-content-center'>Contact information</h2>
-    <p class="d-flex justify-content-center">Please contact us!</p>
-    <ul class="list-contact d-flex justify-content-center">
-      <li class="">Our email</li>
-      <li class="">Our Phone</li>
-      <li class="">Our Address</li>
-    </ul>
-  </section>
-  <footer></footer>
-
-  <script src="./index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script src="./luxon.js"></script>
+    <script src="./index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

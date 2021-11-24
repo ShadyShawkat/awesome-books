@@ -8,9 +8,36 @@ body {
   text-align: center;
 }
 
-.nav-items{
+.wrapper {
+  min-height: 100vh;
+}
+
+.nav-items {
   list-style-type: none;
-  gap: 20px;
+  gap: 10px;
+}
+
+.nav-items li {
+  border-right: 1px solid black;
+  padding-right: 10px;
+}
+
+.nav-items li:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.active {
+  color: blue;
 }
 
 .books {
@@ -40,22 +67,15 @@ p {
   box-shadow: 3px 3px 2px #888;
 }
 
-.bookList {
-  display: block;
-}
-
-.formInput {
-  display: none;
-}
-
-.contactForm {
-  display: none;
-}
-
 form {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 400px;
   gap: 10px;
+}
+
+.list-contact {
+  display: inline-block;
+  margin: 0 auto;
 }
