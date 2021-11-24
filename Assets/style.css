@@ -8,7 +8,12 @@ body {
   text-align: center;
 }
 
-ul {
+.nav-items{
+  list-style-type: none;
+  gap: 20px;
+}
+
+.books {
   list-style: none;
   min-width: 300px;
   max-width: 50vw;
@@ -21,12 +26,12 @@ p {
   margin-bottom: 0 !important;
 }
 
-ul li {
+.books li {
   display: flex;
   align-items: center;
 }
 
-ul li:nth-child(odd) {
+.books li:nth-child(odd) {
   background: rgb(212, 211, 211);
 }
 
