@@ -1,36 +1,41 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome books
 
-> One paragraph statement about the project.
+> This prject you can add books, display them and remove the ones you don't want.
 
 ![screenshot](./Assets/ab.png)
-
-Additional description about the project and its features.
 
 ## Built With
 
 - JavaScript 
 - HTML
 - CSS
+- Bootstrap
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://shadyshawkat.github.io/awesome-books/)
 
+## Getting Started
 
+To get a local copy up and running follow these simple example steps.
+
+1- Navigate to the button on the top right green "code" button.
+2- In the drop down menu choose "Download Zip".
+3- After extracting the files, you'll have my project on your local machine.
 
 ## Authors
 
-👤 **Author1**
+👤 **Shady Shawkat**
 
 - GitHub: [@githubhandle](https://github.com/ShadyShawkat)
 
-👤 **Author2**
+👤 **Ayebazibwe Ishmael**
 
-- GitHub: [@githubhandle](https://github.com/AYEBAZIBWE ISHMAEL)
+- GitHub: [@githubhandle](https://github.com/ayebaishmo)
 
-👤 **Author3**
+👤 **Angela Cuahutle**
 
 - GitHub: [@githubhandle](https://github.com/angelacuahutle)
 
