@@ -3,6 +3,7 @@ const form = document.querySelector('form');
 const booksList = document.querySelector('.books');
 const title = document.querySelector('.title');
 const author = document.querySelector('.author');
+const noBooksText = document.querySelector('.no-books-txt');
 
 class Book {
   constructor(title, author, id = 0) {
@@ -30,6 +31,15 @@ class Book {
 
   static renderUI() {
     const books = Book.getDataFromLocalStorage();
+
+    if(Book.books.length > 0){
+      noBooksText.style.display = 'none';
+      booksList.style.display = 'block';
+    } else {
+      noBooksText.style.display = 'block';
+      booksList.style.display = 'none';
+    };
+
     booksList.innerHTML = '';
     Book.books.forEach((book) => {
       const bookItem = document.createElement('li');
@@ -62,6 +72,7 @@ class Book {
     Book.renderUI();
     title.value = '';
     author.value = '';
+    alert(`"${this.title}" has been added successfully to your booklist.`);
   }
 
   removeBook(id = this.id) {
