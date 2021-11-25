@@ -22,22 +22,24 @@
 To get a local copy up and running follow these simple example steps.
 
 1- Navigate to the button on the top right green "code" button.
+
 2- In the drop down menu choose "Download Zip".
+
 3- After extracting the files, you'll have my project on your local machine.
 
 ## Authors
 
 👤 **Shady Shawkat**
 
-- GitHub: [@githubhandle](https://github.com/ShadyShawkat)
+- GitHub: [@ShadyShawkat](https://github.com/ShadyShawkat)
 
 👤 **Ayebazibwe Ishmael**
 
-- GitHub: [@githubhandle](https://github.com/ayebaishmo)
+- GitHub: [@ayebaishmo](https://github.com/ayebaishmo)
 
 👤 **Angela Cuahutle**
 
-- GitHub: [@githubhandle](https://github.com/angelacuahutle)
+- GitHub: [@angelacuahutle](https://github.com/angelacuahutle)
 
 
 ## 🤝 Contributing
