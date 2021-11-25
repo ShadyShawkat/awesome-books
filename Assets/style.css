@@ -8,7 +8,44 @@ body {
   text-align: center;
 }
 
-ul {
+.wrapper {
+  min-height: 100vh;
+}
+
+.nav-items {
+  list-style-type: none;
+  gap: 10px;
+}
+
+.nav-items li {
+  border-right: 1px solid black;
+  padding-right: 10px;
+}
+
+.books li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items li:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.active {
+  color: blue;
+}
+
+.books {
   list-style: none;
   min-width: 300px;
   max-width: 50vw;
@@ -21,12 +58,7 @@ p {
   margin-bottom: 0 !important;
 }
 
-ul li {
-  display: flex;
-  align-items: center;
-}
-
-ul li:nth-child(odd) {
+.books li:nth-child(odd) {
   background: rgb(212, 211, 211);
 }
 
@@ -41,4 +73,9 @@ form {
   flex-direction: column;
   width: 400px;
   gap: 10px;
+}
+
+.list-contact {
+  display: inline-block;
+  margin: 0 auto;
 }

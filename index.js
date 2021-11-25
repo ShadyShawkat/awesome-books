@@ -1,3 +1,4 @@
+const { DateTime } = luxon;// eslint-disable-line
 const form = document.querySelector('form');
 const booksList = document.querySelector('.books');
 const title = document.querySelector('.title');
@@ -43,7 +44,9 @@ class Book {
     removeBtns.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const bookId = e.target.id;
-        books.myBooks = books.myBooks.filter((book) => book.id !== parseInt(bookId, 10));
+        books.myBooks = books.myBooks.filter(
+          (book) => book.id !== parseInt(bookId, 10),
+        );
         Book.setDataInLocalStorage(books);
         Book.renderUI();
       });
@@ -86,3 +89,61 @@ if (!booksData) {
   Book.books = booksData;
   Book.renderUI();
 }
+
+function getNumberSuffix(num) {
+  const th = 'th';
+  const rd = 'rd';
+  const nd = 'nd';
+  const st = 'st';
+
+  if (num === 11 || num === 12 || num === 13) return th;
+
+  const lastDigit = num.toString().slice(-1);
+
+  switch (lastDigit) {
+    case '1':
+      return st;
+    case '2':
+      return nd;
+    case '3':
+      return rd;
+    default:
+      return th;
+  }
+}
+
+window.onload = () => {
+  const date = DateTime.now();
+  const dateString = `${date.monthLong} ${date.day}${getNumberSuffix(
+    date.day,
+  )} ${date.year}, ${date.toFormat('tt')}`;
+  document.querySelector('.time').textContent = dateString;
+
+  setInterval(() => {
+    const date = DateTime.now();
+    const dateString = `${date.monthLong} ${date.day}${getNumberSuffix(
+      date.day,
+    )} ${date.year}, ${date.toFormat('tt')}`;
+    document.querySelector('.time').textContent = dateString;
+  }, 1000);
+
+  const navLinks = document.querySelectorAll('.nav-items li a');
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      document.querySelector('.active').classList.remove('active');
+      event.target.classList.add('active');
+
+      document.querySelectorAll('section').forEach((sec) => {
+        sec.classList.add('d-none');
+      });
+
+      if (event.target.id === 'list') {
+        document.querySelector('.bookList').classList.remove('d-none');
+      } else if (event.target.id === 'form') {
+        document.querySelector('.formInput').classList.remove('d-none');
+      } else {
+        document.querySelector('.contactForm').classList.remove('d-none');
+      }
+    });
+  });
+};
